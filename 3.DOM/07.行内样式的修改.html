@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .change{
+            background-color: rebeccapurple;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>你说的是对的</div>
+    <script>
+        var div =document.querySelector('div')
+        div.onclick=function(){
+            /* 修改的是div里面的style样式的数据，权重比head的高 */
+            // div.style.backgroundColor='red'
+
+            /* div中多个数据都需要被修改的话，通过，this，写在这个地方，不太现实的
+               可以把数据写在CSS里面，通过添加class的方式添加数据,以前的class名字被
+               覆盖，以前的不想被覆盖，把以前的写在前面，新的写在后面，中间空格隔开
+               一个div可以有读个class的名字 */
+            this.className='first change'
+        }
+    </script>
+</body>
+
+</html>

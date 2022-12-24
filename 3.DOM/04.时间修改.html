@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+<img src="../image/s.gif" alt="" title="刘德华">
+<div>上午好</div>
+<script>
+
+    var img = document.querySelector('img');
+    var div = document.querySelector(`div`);
+    var dateHose = new Date();
+    var hours = dateHose.getHours();
+    console.log(hours)
+    console.log(dateHose)
+    if (hours < 12) {
+        img.src = "../image/s.gif"
+        div.innerHTML = "上午好，好好写代码"
+    } else if (hours) {
+
+    } else {
+        img.src = "../image/w.gif"
+        div.innerHTML = "晚上好，好好写代码"
+    }
+</script>
+</body>
+
+</html>

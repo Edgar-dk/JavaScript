@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的基本使用</title>
+</head>
+
+<body>
+    <script>
+        var str = 'abdsnsdacsarfecs';
+        var o = {}
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i)
+            if (o[chars]) {  //o[chars]得到的是属性的值，没有这个值的话，就else
+                o[chars]++
+            } else {
+                o[chars] = 1 //没有上面那个属性值的话，就把这个属性赋值为1，相当于这个对象
+                //里面有了这个属性，并且值为1
+            }
+        }
+        var Max = 0
+        var ch = ' '
+        /* 1.会一层一层的循环里面的数据，第一个
+             结束之后，进行第二个，o[k]是按照顺序属性
+             的值 */
+        for (var k in o) {
+            if (o[k] > Max) {
+                Max = o[k]
+                ch = k
+            }
+        }
+        console.log(Max)
+        console.log('最多的字符是'+ch)
+    </script>
+</body>
+
+</html>

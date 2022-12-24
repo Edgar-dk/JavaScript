@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            /* 不给高度的话，默认是1px */
+            width: 400px;
+            /* 边框是，红色的，并且，厚度是1px,下面修改成，底边框是白色，其他三个边框不给颜色
+               默认是不显示 */
+            border-bottom: 1px solid #ccc;
+            /* 居中显示，距离上边距，200px */
+            margin: 200px auto;
+        }
+
+        .box input {
+            /* box里面的input，里面盒子的高度 ，自动撑起外面盒子的高度
+               在不给input边框颜色的时候，默认是浅灰白色，border等于0
+               不给边框颜色，只有border等于0的时候，虽然看不到颜色，点击
+               的时候，就出现边框的颜色了，用outline等于none，点击之后
+               也不出现颜色，单独使用outline等于none，可以看到边框，点击
+               后，边框不消失 */
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            /* position定位的使用，relative，相对定位，absolute绝对定位，相对于
+               父标签的位置，移动的标准就是，父标签 */
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="请输入内容">
+    <div class="box">
+        <input type="password" name="" id="pwd">
+
+        <label for="">
+            <img src="../image/close.png" alt="" id="eye">
+        </label>
+    </div>
+    <script>
+        var pwd = document.getElementById('pwd');
+        var eye = document.getElementById('eye');
+        var flage = 0;
+        eye.onclick = function () {
+            if (flage == 0) {
+                /* 最大的区别就是，在input中，type的变化，密码状态的话，输入的数据，隐藏起来
+                   test的话，看不到数据 */
+                pwd.type = "text"
+                eye.src='../image/open.png'
+                flage = 1;
+            } else if (flage = 1) {
+                pwd.type = "password"
+                eye.src='../image/close.png'
+                flage = 0
+            }
+        }
+    </script>
+</body>
+
+</html>

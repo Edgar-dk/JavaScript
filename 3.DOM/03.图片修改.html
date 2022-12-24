@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ldh">刘德华</button>
+    <button id="zyy">张学友</button><br>
+    <img src="../image/ldh.jpg" alt="" title="刘德华">
+    <script>
+        var ldh = document.getElementById('ldh');
+        /* 1.通过什么方式，获取这个标签，都是获取的整个标签
+             相当于ldh就是整个标签 */
+        console.log(ldh)
+        /* 
+        // <button id="ldh">刘德华</button>
+        */
+        var zyy = document.getElementById('zyy');
+        var img = document.querySelector('img');
+        zyy.onclick = function () {
+            img.src = "../image/zxy.jpg";
+            img.title = "张学友";
+        }
+        ldh.onclick = function () {
+            img.src = "../image/ldh.jpg";
+            img.title = "刘德华";
+        }
+    </script>
+</body>
+
+</html>
